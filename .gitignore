@@ -1,0 +1,42 @@
+
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon?
+._*
+.Spotlight-V100
+.Trashes
+*.swp
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+*.lnk
+
+
+# Temporary files
+*.tmp
+*.bak
+*.swp
+*.swo
+
+# Backup files
+*~
+
+*.ipr
+*.iws
+
+#Ignore dependency directories
+/libs
+/node_modules
+
+#Ignore os-specific files
+.DS_Store
+Thumbs.db
+ehthumbs.db
+
+
