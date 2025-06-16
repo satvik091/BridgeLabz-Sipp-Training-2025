@@ -22,6 +22,14 @@ This repository contains daily assignments, exercises, and code developed as par
   - Functions/methods in Java
   - Introduction to object-oriented principles
 
+### ✅ Day 3 – Control Flow Programs
+
+- Practiced control flow mechanisms in Java.
+- Worked on:
+if, if-else, else-if statements
+switch cases
+Looping constructs (for, while, do-while)
+Nested conditionals and loops for complex logic building
 ---
 
 ## 🛠 Tech Stack
@@ -43,4 +51,8 @@ BridgeLabz-SIPP-Training-2025/
 ├── Day2_JavaFundamentals/
 │   └── <Java programs for Day 2>
 │
+├── Day3_ControlFlows/
+│   └── <Java programs for Day 3: if-else, switch, loops, etc.>
+│
 └── README.md
+
