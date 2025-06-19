@@ -19,23 +19,30 @@ This repository contains daily assignments, exercises, and code developed as par
 - Covered topics such as:
   - Data types and variables
   - Operators and expressions
-  - Functions/methods in Java
-  - Introduction to object-oriented principles
+
 
 ### ✅ Day 3 – Control Flow Programs
-
 - Practiced control flow mechanisms in Java.
 - Worked on:
-if, if-else, else-if statements
-switch cases
-Looping constructs (for, while, do-while)
-Nested conditionals and loops for complex logic building
+  - if, if-else, else-if statements  
+  - switch cases  
+  - Looping constructs (for, while, do-while)  
+  - Nested conditionals and loops for complex logic building
+
+### ✅ Day 4 – Arrays in Java
+- Understood the concept and usage of arrays in Java.
+- Practiced:
+  - Declaration and initialization of arrays  
+  - Iterating through arrays using loops  
+  - Performing operations like sum, average, max/min, sorting, etc.  
+  - Working with multidimensional arrays
+
 ---
 
 ## 🛠 Tech Stack
 
 - Language: **Java**
-- Tools: VS Code / IntelliJ IDEA
+- Tools: IntelliJ IDE
 - Version Control: Git & GitHub
 
 ---
@@ -54,5 +61,7 @@ BridgeLabz-SIPP-Training-2025/
 ├── Day3_ControlFlows/
 │   └── <Java programs for Day 3: if-else, switch, loops, etc.>
 │
+├── Day4_Arrays/
+│   └── <Java programs for Day 4: single & multi-dimensional arrays>
+│
 └── README.md
-
