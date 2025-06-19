@@ -20,7 +20,6 @@ This repository contains daily assignments, exercises, and code developed as par
   - Data types and variables
   - Operators and expressions
 
-
 ### ✅ Day 3 – Control Flow Programs
 - Practiced control flow mechanisms in Java.
 - Worked on:
@@ -36,6 +35,15 @@ This repository contains daily assignments, exercises, and code developed as par
   - Iterating through arrays using loops  
   - Performing operations like sum, average, max/min, sorting, etc.  
   - Working with multidimensional arrays
+
+### ✅ Day 5 – Strings in Java
+- Gained understanding of Java Strings and string manipulation.
+- Topics covered:
+  - String declaration and initialization  
+  - Common string methods (length, charAt, substring, indexOf, etc.)  
+  - String comparison using `equals()`, `compareTo()`, `==`  
+  - StringBuilder and StringBuffer usage for mutable strings  
+  - String concatenation and formatting techniques
 
 ---
 
@@ -63,5 +71,8 @@ BridgeLabz-SIPP-Training-2025/
 │
 ├── Day4_Arrays/
 │   └── <Java programs for Day 4: single & multi-dimensional arrays>
+│
+├── Day5_Strings/
+│   └── <Java programs for Day 5: string methods, StringBuilder, etc.>
 │
 └── README.md
