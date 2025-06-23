@@ -27,7 +27,7 @@ This repository contains daily assignments, exercises, and code developed as par
 ## 🛠 Tech Stack
 
 - Language: **Java**
-- Tools: VS Code / IntelliJ IDEA
+- Tools: Notepad and Terminal
 - Version Control: Git & GitHub
 
 ---
