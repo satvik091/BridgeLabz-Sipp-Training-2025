@@ -86,6 +86,7 @@ This repository contains daily assignments, exercises, and code developed as par
 
 ## 📁 Project Structure
 
+```plaintext
 BridgeLabz-SIPP-Training-2025/
 │
 ├── Day1_JavaProblems/
