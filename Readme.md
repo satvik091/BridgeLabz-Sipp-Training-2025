@@ -7,20 +7,20 @@ This repository contains daily assignments, exercises, and code developed as par
 
 ## 📅 Training Progress
 
-### ✅ Day 1 – Java Problems
+### ✅ [Day 1 – Java Problems](https://github.com/satvik091/BridgeLabz-Sipp-Training-2025/tree/CoreJava/Practise_problems)
 - Solved basic Java coding problems to strengthen programming logic.
 - Focused on:
   - Conditionals and loops  
   - Input/output in Java  
   - Writing clean and readable code  
 
-### ✅ Day 2 – Java Fundamentals Problems
+### ✅ [Day 2 – Java Fundamentals Problems](https://github.com/satvik091/BridgeLabz-Sipp-Training-2025/tree/CoreJava/JAVA_FUNDAMENTALS)
 - Explored core Java fundamentals.
 - Covered topics such as:
   - Data types and variables  
   - Operators and expressions  
 
-### ✅ Day 3 – Control Flow Programs
+### ✅ [Day 3 – Control Flow Programs](https://github.com/satvik091/BridgeLabz-Sipp-Training-2025/tree/CoreJava/Control_Flow)
 - Practiced control flow mechanisms in Java.
 - Worked on:
   - `if`, `if-else`, `else-if` statements  
@@ -28,7 +28,7 @@ This repository contains daily assignments, exercises, and code developed as par
   - Looping constructs (`for`, `while`, `do-while`)  
   - Nested conditionals and loops  
 
-### ✅ Day 4 – Arrays in Java
+### ✅ [Day 4 – Arrays in Java](https://github.com/satvik091/BridgeLabz-Sipp-Training-2025/tree/CoreJava/Arrays)
 - Understood the concept and usage of arrays.
 - Practiced:
   - Declaration and initialization  
@@ -36,7 +36,7 @@ This repository contains daily assignments, exercises, and code developed as par
   - Sum, average, max/min, sorting  
   - Multidimensional arrays  
 
-### ✅ Day 5 – Strings in Java
+### ✅ [Day 5 – Strings in Java](https://github.com/satvik091/BridgeLabz-Sipp-Training-2025/tree/CoreJava/Strings)
 - Gained understanding of string handling.
 - Topics included:
   - String methods: `length()`, `charAt()`, `substring()`, `indexOf()`  
@@ -44,7 +44,7 @@ This repository contains daily assignments, exercises, and code developed as par
   - StringBuilder & StringBuffer for mutable strings  
   - String formatting and concatenation  
 
-### ✅ Day 6 – Methods in Java
+### ✅ [Day 6 – Methods in Java](https://github.com/satvik091/BridgeLabz-Sipp-Training-2025/tree/CoreJava/Methods)
 - Developed modular code using methods.
 - Covered:
   - Defining and invoking static/non-static methods  
@@ -52,21 +52,21 @@ This repository contains daily assignments, exercises, and code developed as par
   - Method overloading  
   - Reusability and code organization  
 
-### ✅ Day 7 – Built-in Functions
+### ✅ [Day 7 – Built-in Functions](https://github.com/satvik091/BridgeLabz-Sipp-Training-2025/tree/CoreJava/Built-in%20functions)
 - Learned to use Java’s built-in utility functions and libraries.
 - Focused on:
   - Math functions (`Math.pow()`, `Math.sqrt()`, etc.)  
   - Wrapper classes (`Integer`, `Double`, etc.)  
   - Utility methods from `Arrays` and `Collections` classes  
 
-### ✅ Day 8 – Extra Problems & Practice
+### ✅ [Day 8 – Extra Problems & Practice](https://github.com/satvik091/BridgeLabz-Sipp-Training-2025/tree/CoreJava/Strings/Day-8%20Problems)
 - Strengthened problem-solving skills with extra challenges.
 - Practiced:
   - Pattern printing  
   - Recursion problems  
   - Logical problem-solving using all learned concepts  
 
-### 🔄 Day 9 – Object-Oriented Programming (OOP) – *Branch: `OOps`*
+### 🔄 [Day 9 – Object-Oriented Programming (OOP)](https://github.com/satvik091/BridgeLabz-Sipp-Training-2025/tree/OOPS/Class-Object) – *Branch: `OOps`* 
 - Switched to a new branch to focus on OOP.
 - Covered:
   - Class & Object creation  
@@ -74,7 +74,7 @@ This repository contains daily assignments, exercises, and code developed as par
   - Constructor overloading  
   - Introduction to inheritance and polymorphism  
 
-### 🔄 Day 10 – Constructors & Access Modifiers – *Branch: `OOps`*
+### 🔄 [Day 10 – Constructors & Access Modifiers –](https://github.com/satvik091/BridgeLabz-Sipp-Training-2025/tree/OOPS/Constructors-%20Access%20Modifiers) *Branch: `OOps`*
 - Continued in the OOPs branch.
 - Topics included:
   - Default, parameterized, and copy constructors  
