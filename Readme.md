@@ -61,18 +61,13 @@ This repository contains daily assignments, exercises, and code developed as par
 
 ### ✅ [Day 8 – Extra Problems & Practice](https://github.com/satvik091/BridgeLabz-Sipp-Training-2025/tree/CoreJava/Strings/Day-8%20Problems)
 - Strengthened problem-solving skills with extra challenges.
-- Practiced:
-  - Pattern printing  
-  - Recursion problems  
-  - Logical problem-solving using all learned concepts  
+- Practiced:  
+  - Logical problem-solving using all learned concepts  .
 
 ### 🔄 [Day 9 – Object-Oriented Programming (OOP)](https://github.com/satvik091/BridgeLabz-Sipp-Training-2025/tree/OOPS/Class-Object) – *Branch: `OOps`* 
 - Switched to a new branch to focus on OOP.
 - Covered:
-  - Class & Object creation  
-  - Encapsulation using getters and setters  
-  - Constructor overloading  
-  - Introduction to inheritance and polymorphism  
+  - Class & Object creation   
 
 ### 🔄 [Day 10 – Constructors & Access Modifiers –](https://github.com/satvik091/BridgeLabz-Sipp-Training-2025/tree/OOPS/Constructors-%20Access%20Modifiers) *Branch: `OOps`*
 - Continued in the OOPs branch.
