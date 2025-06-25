@@ -77,6 +77,14 @@ This repository contains daily assignments, exercises, and code developed as par
   - Access control using `public`, `private`, `protected`, and default  
   - Understanding package-private visibility  
 
+### ✅ [Day 11 – this, static, and final Keyword Programs](https://github.com/satvik091/BridgeLabz-Sipp-Training-2025/tree/OOPS/this_static_final) – *Branch: `OOps`*
+- Explored important Java keywords that influence object behavior and memory.
+- Topics included:
+  - Using `this` keyword for referencing current object and constructor chaining  
+  - `static` variables, methods, and blocks – shared memory and utility use cases  
+  - `final` variables, methods, and classes – ensuring immutability and restriction  
+
+
 ---
 
 ## 🛠 Tech Stack
@@ -121,4 +129,5 @@ BridgeLabz-SIPP-Training-2025/
 Other Branches:
 └── OOps/
     ├── Day9_OOP_Basics/
-    └── Day10_Constructors_AccessModifiers/
+    ├── Day10_Constructors_AccessModifiers/
+    └── Day11_This_Static_Final/
