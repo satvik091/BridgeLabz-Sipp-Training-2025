@@ -84,6 +84,13 @@ This repository contains daily assignments, exercises, and code developed as par
   - `static` variables, methods, and blocks – shared memory and utility use cases  
   - `final` variables, methods, and classes – ensuring immutability and restriction  
 
+### ✅ [Day 12 – Object-Oriented Design Principles](https://github.com/satvik091/BridgeLabz-Sipp-Training-2025/tree/OOPS/Object%20Oriented%20Design%20Principles) – *Branch: `OOps`*
+- Continued OOP exploration by understanding design principles.
+- Topics included:
+  - SOLID principles (Single Responsibility, Open/Closed, Liskov, Interface Segregation, Dependency Inversion)  
+  - DRY (Don’t Repeat Yourself) and KISS (Keep It Simple, Stupid) principles  
+  - Cohesion and coupling concepts  
+  - Applying these principles in real-world Java code
 
 ---
 
@@ -130,4 +137,5 @@ Other Branches:
 └── OOps/
     ├── Day9_OOP_Basics/
     ├── Day10_Constructors_AccessModifiers/
-    └── Day11_This_Static_Final/
+    ├── Day11_This_Static_Final/
+    └── Day12_ObjectOrientedDesignPrinciples/
