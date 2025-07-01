@@ -94,7 +94,7 @@ This repository contains daily assignments, exercises, and code developed as par
 
 ---
 
-### 🧪 [Workshop – Hands-on Java Programs](https://github.com/satvik091/BridgeLabz-Sipp-Training-2025/tree/Workshop/Workshop) – *Branch: `Workshop`*
+### 🧪 [Day 13 Workshop – Hands-on Java Programs](https://github.com/satvik091/BridgeLabz-Sipp-Training-2025/tree/Workshop/Workshop) – *Branch: `Workshop`*
 This branch contains practical Java programs developed during workshop sessions and special practice days.
 
 #### 📁 Folder: `Workshop/`
