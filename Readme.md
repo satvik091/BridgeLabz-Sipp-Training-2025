@@ -84,13 +84,22 @@ This repository contains daily assignments, exercises, and code developed as par
   - `static` variables, methods, and blocks – shared memory and utility use cases  
   - `final` variables, methods, and classes – ensuring immutability and restriction  
 
-### ✅ [Day 12 – Object-Oriented Design Principles](https://github.com/satvik091/BridgeLabz-Sipp-Training-2025/tree/OOPS/Object%20Oriented%20Design%20Principles) – *Branch: `OOps`*
+### 🔄 [Day 12 – Object-Oriented Design Principles](https://github.com/satvik091/BridgeLabz-Sipp-Training-2025/tree/OOPS/Object%20Oriented%20Design%20Principles) – *Branch: `OOps`*
 - Continued OOP exploration by understanding design principles.
 - Topics included:
   - SOLID principles (Single Responsibility, Open/Closed, Liskov, Interface Segregation, Dependency Inversion)  
   - DRY (Don’t Repeat Yourself) and KISS (Keep It Simple, Stupid) principles  
   - Cohesion and coupling concepts  
   - Applying these principles in real-world Java code
+
+### 🔄 [Day 14 – Encapsulation, Polymorphism, Interface, and Abstract Classes](https://github.com/satvik091/BridgeLabz-Sipp-Training-2025/tree/OOPS/Encapsulation_Polymorphism_Interface_and_Abstract_Class/Encapsulation_Polymorphism_Interface_and_Abstract_Class) – *Branch: `OOps`*
+- Continued advanced OOP concepts.
+- Topics included:
+  - **Encapsulation**: data hiding using getters/setters  
+  - **Polymorphism**: method overloading and overriding  
+  - **Interfaces**: defining contracts in Java  
+  - **Abstract classes**: sharing partial implementation  
+  - Real-world integration of these principles
 
 ---
 
@@ -109,7 +118,7 @@ This branch contains practical Java programs developed during workshop sessions 
 ## 🛠 Tech Stack
 
 - **Language**: Java  
-- **IDE**: IntelliJ IDEA  
+- **IDE**: Eclipse 
 - **Version Control**: Git & GitHub  
 
 ---
@@ -150,4 +159,8 @@ Other Branches:
     ├── Day9_OOP_Basics/
     ├── Day10_Constructors_AccessModifiers/
     ├── Day11_This_Static_Final/
-    └── Day12_ObjectOrientedDesignPrinciples/
+    ├── Day12_ObjectOrientedDesignPrinciples/
+    └── Day14_Encapsulation_Polymorphism_Interface_Abstract/
+
+└── Workshop/
+  └── Day13_Workshop_Programs/
