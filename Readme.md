@@ -101,6 +101,18 @@ This repository contains daily assignments, exercises, and code developed as par
   - **Abstract classes**: sharing partial implementation  
   - Real-world integration of these principles
 
+### 🔗 [Day 15 – Linked List](https://github.com/satvik091/BridgeLabz-Sipp-Training-2025/tree/DSA/LinkedList)
+📍 *Branch:* `DSA`
+
+We began our Data Structures journey with the foundational concept of Linked Lists.
+
+#### Topics Covered:
+- 🧱 **Singly Linked List** – Node structure, creation, insertion at head/tail, and deletion  
+- 🔍 **Traversal & Search** – Navigating through nodes and finding values  
+- 🧠 **Why Linked Lists?** – Comparison with arrays in terms of memory allocation and dynamic resizing  
+- 💻 **Hands-on Practice** – Implemented basic operations using Java classes and methods
+
+
 ---
 
 ### 🧪 [Day 13 Workshop – Hands-on Java Programs](https://github.com/satvik091/BridgeLabz-Sipp-Training-2025/tree/Workshop/Workshop) – *Branch: `Workshop`*
@@ -164,3 +176,6 @@ Other Branches:
 
 └── Workshop/
   └── Day13_Workshop_Programs/
+
+└── DSA/
+    └── Day15_Linked_List_Programs/
