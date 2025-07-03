@@ -101,7 +101,7 @@ This repository contains daily assignments, exercises, and code developed as par
   - **Abstract classes**: sharing partial implementation  
   - Real-world integration of these principles
 
-### 🔗 [Day 15 – Linked List](https://github.com/satvik091/BridgeLabz-Sipp-Training-2025/tree/DSA/LinkedList)
+### 🔗 [Day 15 – Linked List](https://github.com/satvik091/BridgeLabz-Sipp-Training-2025/tree/DSA/Linked_List)
 📍 *Branch:* `DSA`
 
 We began our Data Structures journey with the foundational concept of Linked Lists.
