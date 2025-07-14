@@ -112,6 +112,30 @@ We began our Data Structures journey with the foundational concept of Linked Lis
 - 🧠 **Why Linked Lists?** – Comparison with arrays in terms of memory allocation and dynamic resizing  
 - 💻 **Hands-on Practice** – Implemented basic operations using Java classes and methods
 
+### 🧪 [Day 16 – Stacks, Queues, Hash Maps & Hash Functions](https://github.com/satvik091/BridgeLabz-Sipp-Training-2025/tree/DSA/Stacks_Queues) – *Branch: `DSA`*
+- Continued Data Structures journey with:
+  - **Stacks**: LIFO principle, push/pop operations, applications
+  - **Queues**: FIFO principle, enqueue/dequeue, use cases
+  - **Hash Maps**: Key-value storage, collision handling
+  - **Hash Functions**: Basics and importance in hashing
+
+### 🧪 [Day 17 – Sorting Algorithms](https://github.com/satvik091/BridgeLabz-Sipp-Training-2025/tree/DSA/Sorting_Algorithms) – *Branch: `DSA`*
+- Explored classic sorting techniques:
+  - **Bubble Sort**, **Selection Sort**, **Insertion Sort**
+  - **Merge Sort**, **Quick Sort** (introduction)
+  - Compared time complexities and use cases
+
+### 🧪 [Day 18 – Linear and Binary Search](#) – *Branch: `DSA`*
+- Studied searching algorithms:
+  - **Linear Search**: Sequential search, best for unsorted data
+  - **Binary Search**: Efficient search on sorted data, divide and conquer
+  - Implemented both in Java
+
+### 🧪 [Day 19 – Algorithm's Runtime Analysis & Big-O Notation](https://github.com/satvik091/BridgeLabz-Sipp-Training-2025/tree/DSA/Algorithm's_Runtime_Analysis_%26_Big-O_Notation) – *Branch: `DSA`*
+- Introduction to algorithm analysis:
+  - **Big-O Notation**: Expressing time and space complexity
+  - Analyzing best, worst, and average cases
+  - Practical examples with sorting/searching algorithms
 
 ---
 
@@ -178,4 +202,8 @@ Other Branches:
   └── Day13_Workshop_Programs/
 
 └── DSA/
-    └── Day15_Linked_List_Programs/
+    ├── Day15_Linked_List_Programs/
+    ├── Day16_Stacks_Queues_Hash_Maps_Hash_Functions/
+    ├── Day17_Sorting_Algorithms/
+    ├── Day18_Linear_Binary_Search/
+    └── Day19_Algorithm's_Runtime_Analysis_&_Big-O_Notation/
