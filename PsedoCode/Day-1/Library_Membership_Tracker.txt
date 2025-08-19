@@ -1,0 +1,31 @@
+CLASS Member
+    PRIVATE:
+        name : STRING
+        memberId : INTEGER
+        membershipDate : DATE
+        validityMonths : INTEGER
+
+    PUBLIC:
+        CONSTRUCTOR Member(name : STRING, memberId : INTEGER, membershipDate : DATE, validityMonths : INTEGER)
+            THIS.name = name
+            THIS.memberId = memberId
+            THIS.membershipDate = membershipDate
+            THIS.validityMonths = validityMonths
+        END CONSTRUCTOR
+
+        METHOD getDetails() : STRING
+            RETURN "ID: " + toString(memberId) + 
+                   " | Name: " + name + 
+                   " | Membership Date: " + toString(membershipDate) + 
+                   " | Validity (months): " + toString(validityMonths)
+        END METHOD
+
+        METHOD checkValidity(currentDate : DATE) : BOOLEAN
+            expiryDate = membershipDate + validityMonths (in months)
+            IF currentDate <= expiryDate THEN
+                RETURN TRUE   // Membership still valid
+            ELSE
+                RETURN FALSE  // Membership expired
+            END IF
+        END METHOD
+END CLASS

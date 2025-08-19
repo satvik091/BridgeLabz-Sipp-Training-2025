@@ -1,0 +1,46 @@
+CLASS Pet
+    PRIVATE:
+        name : STRING
+        age  : INTEGER
+        species : STRING
+        id : INTEGER
+    PROTECTED:
+        // allow subclasses to access
+    PUBLIC:
+        // static counter to auto-assign IDs
+        STATIC nextId : INTEGER = 1
+
+        CONSTRUCTOR Pet(inputName : STRING, inputAge : INTEGER, inputSpecies : STRING)
+            name    = inputName
+            age     = inputAge
+            species = inputSpecies
+            id      = Pet.nextId
+            Pet.nextId = Pet.nextId + 1
+        END CONSTRUCTOR
+
+        METHOD getName() : STRING
+            RETURN name
+        END METHOD
+
+        METHOD getAge() : INTEGER
+            RETURN age
+        END METHOD
+
+        METHOD getId() : INTEGER
+            RETURN id
+        END METHOD
+
+        METHOD getInfo() : STRING
+            RETURN "ID=" + toString(id) + ", " + species + " named " + name + " (" + toString(age) + " yrs)"
+        END METHOD
+
+        // Polymorphic hook(s)
+        METHOD makeSound() : STRING
+            RETURN "(generic pet sound)"
+        END METHOD
+
+        METHOD describe() : STRING
+            // Meant to be overridden to add subclass details
+            RETURN getInfo()
+        END METHOD
+END CLASS
