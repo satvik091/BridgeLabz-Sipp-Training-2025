@@ -1,0 +1,76 @@
+CLASS Patient
+    PRIVATE:
+        id : STRING
+        name : STRING
+        age : INTEGER
+        disease : STRING
+    PUBLIC:
+        CONSTRUCTOR Patient(id : STRING, name : STRING, age : INTEGER, disease : STRING)
+            this.id = id
+            this.name = name
+            this.age = age
+            this.disease = disease
+        END CONSTRUCTOR
+
+        METHOD getDetails() : STRING
+            RETURN "ID: " + id + ", Name: " + name + ", Age: " + age + ", Disease: " + disease
+        END METHOD
+END CLASS
+
+CLASS PatientRecordSystem
+    PRIVATE:
+        records : HASHMAP<STRING, Patient>   // key = patient ID
+
+    PUBLIC:
+        CONSTRUCTOR PatientRecordSystem()
+            records = EMPTY HASHMAP
+        END CONSTRUCTOR
+
+        METHOD addPatient(patient : Patient)
+            records[patient.id] = patient
+        END METHOD
+
+        METHOD getPatient(id : STRING)
+            IF id IN records
+                RETURN records[id].getDetails()
+            ELSE
+                RETURN "Patient Not Found"
+            END IF
+        END METHOD
+
+        METHOD updatePatient(id : STRING, newDisease : STRING)
+            IF id IN records
+                records[id].disease = newDisease
+                PRINT "Updated Record for " + id
+            ELSE
+                PRINT "Patient Not Found"
+            END IF
+        END METHOD
+
+        METHOD deletePatient(id : STRING)
+            IF id IN records
+                REMOVE records[id]
+                PRINT "Deleted Record for " + id
+            ELSE
+                PRINT "Patient Not Found"
+            END IF
+        END METHOD
+END CLASS
+
+FUNCTION mainPatientRecord()
+    system = NEW PatientRecordSystem()
+
+    p1 = NEW Patient("P101", "Alice", 30, "Flu")
+    p2 = NEW Patient("P102", "Bob", 40, "Diabetes")
+
+    system.addPatient(p1)
+    system.addPatient(p2)
+
+    PRINT system.getPatient("P101")
+
+    system.updatePatient("P102", "Recovered")
+    PRINT system.getPatient("P102")
+
+    system.deletePatient("P101")
+    PRINT system.getPatient("P101")
+END FUNCTION

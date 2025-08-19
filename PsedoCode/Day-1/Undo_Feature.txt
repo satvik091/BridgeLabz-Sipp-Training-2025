@@ -1,0 +1,50 @@
+CLASS TextEditor
+    PRIVATE:
+        content : STRING
+        undoStack : STACK<STRING>
+
+    PUBLIC:
+        CONSTRUCTOR TextEditor()
+            content = ""
+            undoStack = EMPTY STACK
+        END CONSTRUCTOR
+
+        METHOD typeText(newText : STRING)
+            PUSH content INTO undoStack   // Save state before change
+            content = content + newText
+        END METHOD
+
+        METHOD deleteText(count : INTEGER)
+            PUSH content INTO undoStack   // Save state before change
+            content = SUBSTRING(content, 0, LENGTH(content) - count)
+        END METHOD
+
+        METHOD undo()
+            IF undoStack IS NOT EMPTY THEN
+                content = POP undoStack
+            ELSE
+                PRINT "Nothing to undo!"
+            END IF
+        END METHOD
+
+        METHOD showContent()
+            PRINT "Editor Content: " + content
+        END METHOD
+END CLASS
+
+FUNCTION mainUndoFeature()
+    editor = NEW TextEditor()
+
+    editor.typeText("Hello ")
+    editor.typeText("World")
+    editor.showContent()       // "Hello World"
+
+    editor.deleteText(5)
+    editor.showContent()       // "Hello "
+
+    editor.undo()
+    editor.showContent()       // "Hello World"
+
+    editor.undo()
+    editor.showContent()       // "Hello "
+END FUNCTION

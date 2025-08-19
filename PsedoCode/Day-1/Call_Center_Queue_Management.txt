@@ -1,0 +1,75 @@
+CLASS Customer
+    PRIVATE:
+        name : STRING
+        type : STRING   // "NORMAL" or "EMERGENCY"
+    PUBLIC:
+        CONSTRUCTOR Customer(name : STRING, type : STRING)
+            THIS.name = name
+            THIS.type = type
+        END CONSTRUCTOR
+
+        METHOD getDetails() : STRING
+            RETURN name + " (" + type + ")"
+        END METHOD
+
+        METHOD isEmergency() : BOOLEAN
+            RETURN (type == "EMERGENCY")
+        END METHOD
+END CLASS
+
+CLASS CallCenterQueue
+    PRIVATE:
+        normalQueue : QUEUE<Customer>
+        emergencyQueue : QUEUE<Customer>
+
+    PUBLIC:
+        CONSTRUCTOR CallCenterQueue()
+            normalQueue = EMPTY QUEUE
+            emergencyQueue = EMPTY QUEUE
+        END CONSTRUCTOR
+
+        METHOD enqueue(customer : Customer)
+            IF customer.isEmergency() THEN
+                ENQUEUE customer INTO emergencyQueue
+            ELSE
+                ENQUEUE customer INTO normalQueue
+            END IF
+        END METHOD
+
+        METHOD dequeue() : Customer
+            IF emergencyQueue IS NOT EMPTY THEN
+                RETURN DEQUEUE emergencyQueue
+            ELSE IF normalQueue IS NOT EMPTY THEN
+                RETURN DEQUEUE normalQueue
+            ELSE
+                PRINT "No customers waiting."
+                RETURN NULL
+            END IF
+        END METHOD
+
+        METHOD showQueues()
+            PRINT "Emergency Queue: " + toString(emergencyQueue)
+            PRINT "Normal Queue: " + toString(normalQueue)
+        END METHOD
+END CLASS
+
+FUNCTION mainCallCenter()
+    queue = NEW CallCenterQueue()
+
+    c1 = NEW Customer("Alice", "NORMAL")
+    c2 = NEW Customer("Bob", "EMERGENCY")
+    c3 = NEW Customer("Charlie", "NORMAL")
+    c4 = NEW Customer("David", "EMERGENCY")
+
+    queue.enqueue(c1)
+    queue.enqueue(c2)
+    queue.enqueue(c3)
+    queue.enqueue(c4)
+
+    queue.showQueues()
+
+    PRINT "Serving: " + queue.dequeue().getDetails()   // Bob (EMERGENCY)
+    PRINT "Serving: " + queue.dequeue().getDetails()   // David (EMERGENCY)
+    PRINT "Serving: " + queue.dequeue().getDetails()   // Alice (NORMAL)
+    PRINT "Serving: " + queue.dequeue().getDetails()   // Charlie (NORMAL)
+END FUNCTION

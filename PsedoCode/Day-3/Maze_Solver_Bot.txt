@@ -1,0 +1,67 @@
+CLASS MazeSolver
+    PRIVATE:
+        maze : 2D ARRAY[INTEGER]    // 0 = path, 1 = wall
+        solution : 2D ARRAY[INTEGER] // tracks path
+        N : INTEGER
+
+    PUBLIC:
+        CONSTRUCTOR MazeSolver(maze : 2D ARRAY[INTEGER], N : INTEGER)
+            this.maze = maze
+            this.N = N
+            solution = NEW ARRAY[N][N] FILLED WITH 0
+        END CONSTRUCTOR
+
+        METHOD solveMaze() : BOOLEAN
+            IF solve(0, 0) == TRUE
+                PRINT "Solution Path:"
+                DISPLAY solution
+                RETURN TRUE
+            ELSE
+                PRINT "No Path Found"
+                RETURN FALSE
+            END IF
+        END METHOD
+
+    PRIVATE:
+        METHOD solve(x : INTEGER, y : INTEGER) : BOOLEAN
+            IF x == N-1 AND y == N-1 AND maze[x][y] == 0
+                solution[x][y] = 1
+                RETURN TRUE
+            END IF
+
+            IF isSafe(x, y) == TRUE
+                solution[x][y] = 1
+
+                // Move Right
+                IF solve(x+1, y) == TRUE
+                    RETURN TRUE
+
+                // Move Down
+                IF solve(x, y+1) == TRUE
+                    RETURN TRUE
+
+                // Backtrack
+                solution[x][y] = 0
+                RETURN FALSE
+            END IF
+
+            RETURN FALSE
+        END METHOD
+
+        METHOD isSafe(x : INTEGER, y : INTEGER) : BOOLEAN
+            RETURN (x >= 0 AND x < N AND y >= 0 AND y < N AND maze[x][y] == 0 AND solution[x][y] == 0)
+        END METHOD
+END CLASS
+
+FUNCTION mainMazeSolver()
+    maze = [
+        [0, 1, 0, 0],
+        [0, 0, 0, 1],
+        [1, 0, 1, 0],
+        [0, 0, 0, 0]
+    ]
+    N = 4
+
+    solver = NEW MazeSolver(maze, N)
+    solver.solveMaze()
+END FUNCTION

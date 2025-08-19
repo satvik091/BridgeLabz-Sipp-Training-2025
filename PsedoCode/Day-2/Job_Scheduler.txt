@@ -1,0 +1,59 @@
+CLASS Job
+    PRIVATE:
+        name : STRING
+        deadline : INTEGER
+        processingTime : INTEGER
+    PUBLIC:
+        CONSTRUCTOR Job(name : STRING, deadline : INTEGER, processingTime : INTEGER)
+            this.name = name
+            this.deadline = deadline
+            this.processingTime = processingTime
+        END CONSTRUCTOR
+
+        METHOD getPriority() : INTEGER
+            // Lower deadline → higher priority
+            // If same deadline, shorter processing time → higher priority
+            RETURN (deadline * 1000 + processingTime)
+        END METHOD
+
+        METHOD getDetails() : STRING
+            RETURN name + " | Deadline: " + deadline + " | Time: " + processingTime
+        END METHOD
+END CLASS
+
+CLASS JobScheduler
+    PRIVATE:
+        priorityQueue : PRIORITY_QUEUE<Job>   // Sorted by getPriority()
+
+    PUBLIC:
+        CONSTRUCTOR JobScheduler()
+            priorityQueue = EMPTY PRIORITY_QUEUE
+        END CONSTRUCTOR
+
+        METHOD addJob(job : Job)
+            ENQUEUE job INTO priorityQueue BASED ON job.getPriority()
+        END METHOD
+
+        METHOD runJobs()
+            WHILE priorityQueue IS NOT EMPTY
+                job = DEQUEUE priorityQueue
+                PRINT "Running Job: " + job.getDetails()
+                WAIT job.processingTime SECONDS
+                PRINT "Finished: " + job.getDetails()
+            END WHILE
+        END METHOD
+END CLASS
+
+FUNCTION mainJobScheduler()
+    scheduler = NEW JobScheduler()
+
+    j1 = NEW Job("Job-A", 2, 5)
+    j2 = NEW Job("Job-B", 1, 3)
+    j3 = NEW Job("Job-C", 1, 2)
+
+    scheduler.addJob(j1)
+    scheduler.addJob(j2)
+    scheduler.addJob(j3)
+
+    scheduler.runJobs()
+END FUNCTION
