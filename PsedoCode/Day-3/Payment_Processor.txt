@@ -1,0 +1,50 @@
+INTERFACE PaymentMethod
+    METHOD processPayment(amount : DOUBLE)
+END INTERFACE
+
+CLASS UPI IMPLEMENTS PaymentMethod
+    METHOD processPayment(amount : DOUBLE)
+        PRINT "Processing UPI Payment of Rs." + amount
+    END METHOD
+END CLASS
+
+CLASS Card IMPLEMENTS PaymentMethod
+    METHOD processPayment(amount : DOUBLE)
+        PRINT "Processing Card Payment of Rs." + amount
+    END METHOD
+END CLASS
+
+CLASS NetBanking IMPLEMENTS PaymentMethod
+    METHOD processPayment(amount : DOUBLE)
+        PRINT "Processing NetBanking Payment of Rs." + amount
+    END METHOD
+END CLASS
+
+
+// Generic Transaction class
+CLASS Transaction<T extends PaymentMethod>
+    PRIVATE:
+        method : T
+        amount : DOUBLE
+
+    PUBLIC:
+        CONSTRUCTOR Transaction(method : T, amount : DOUBLE)
+            this.method = method
+            this.amount = amount
+        END CONSTRUCTOR
+
+        METHOD execute()
+            method.processPayment(amount)
+        END METHOD
+END CLASS
+
+
+FUNCTION mainPaymentProcessor()
+    upiTxn = NEW Transaction<UPI>( NEW UPI(), 500.0 )
+    cardTxn = NEW Transaction<Card>( NEW Card(), 1200.0 )
+    netBankingTxn = NEW Transaction<NetBanking>( NEW NetBanking(), 3000.0 )
+
+    upiTxn.execute()
+    cardTxn.execute()
+    netBankingTxn.execute()
+END FUNCTION

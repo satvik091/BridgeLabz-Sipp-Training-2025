@@ -1,0 +1,56 @@
+CLASS Employee
+    PRIVATE:
+        id : STRING
+        name : STRING
+        department : STRING
+    PUBLIC:
+        CONSTRUCTOR Employee(id : STRING, name : STRING, department : STRING)
+            this.id = id
+            this.name = name
+            this.department = department
+        END CONSTRUCTOR
+
+        METHOD getDetails() : STRING
+            RETURN "ID: " + id + ", Name: " + name + ", Department: " + department
+        END METHOD
+
+        METHOD getDepartment() : STRING
+            RETURN department
+        END METHOD
+END CLASS
+
+CLASS EmployeeRecordSystem
+    PRIVATE:
+        employees : ARRAYLIST<Employee>
+
+    PUBLIC:
+        CONSTRUCTOR EmployeeRecordSystem()
+            employees = EMPTY ARRAYLIST
+        END CONSTRUCTOR
+
+        METHOD addEmployee(emp : Employee)
+            employees.add(emp)
+        END METHOD
+
+        METHOD filterByDepartment(dept : STRING)
+            filtered = employees.stream().filter(emp -> emp.getDepartment() == dept)
+            PRINT "Employees in " + dept + ":"
+            FOR EACH emp IN filtered
+                PRINT emp.getDetails()
+            END FOR
+        END METHOD
+END CLASS
+
+FUNCTION mainEmployeeRecord()
+    system = NEW EmployeeRecordSystem()
+
+    e1 = NEW Employee("E101", "Alice", "IT")
+    e2 = NEW Employee("E102", "Bob", "HR")
+    e3 = NEW Employee("E103", "Charlie", "IT")
+
+    system.addEmployee(e1)
+    system.addEmployee(e2)
+    system.addEmployee(e3)
+
+    system.filterByDepartment("IT")
+END FUNCTION

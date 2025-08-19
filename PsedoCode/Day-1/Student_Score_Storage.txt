@@ -1,0 +1,35 @@
+CLASS StudentScoreSystem
+    PRIVATE:
+        scores : HASHMAP<STRING, INTEGER>   // key = student name, value = marks
+
+    PUBLIC:
+        CONSTRUCTOR StudentScoreSystem()
+            scores = EMPTY HASHMAP
+        END CONSTRUCTOR
+
+        METHOD addScore(name : STRING, marks : INTEGER)
+            scores[name] = marks
+        END METHOD
+
+        METHOD displayAllScores()
+            FOR EACH entry IN scores
+                PRINT entry.key + " -> " + entry.value
+            END FOR
+        END METHOD
+
+        METHOD displayHighestScorer()
+            highest = scores.stream().max(BY VALUE)
+            PRINT "Topper: " + highest.key + " with " + highest.value + " marks"
+        END METHOD
+END CLASS
+
+FUNCTION mainStudentScore()
+    system = NEW StudentScoreSystem()
+
+    system.addScore("Alice", 92)
+    system.addScore("Bob", 85)
+    system.addScore("Charlie", 97)
+
+    system.displayAllScores()
+    system.displayHighestScorer()
+END FUNCTION

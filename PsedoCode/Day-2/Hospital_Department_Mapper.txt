@@ -1,0 +1,60 @@
+CLASS Doctor
+    PRIVATE:
+        name : STRING
+        specialization : STRING
+    PUBLIC:
+        CONSTRUCTOR Doctor(name : STRING, specialization : STRING)
+            this.name = name
+            this.specialization = specialization
+        END CONSTRUCTOR
+
+        METHOD getSpecialization() : STRING
+            RETURN specialization
+        END METHOD
+
+        METHOD getDetails() : STRING
+            RETURN "Dr. " + name + " (" + specialization + ")"
+        END METHOD
+END CLASS
+
+CLASS Hospital
+    PRIVATE:
+        departmentMap : MAP<STRING, LIST<Doctor>>
+
+    PUBLIC:
+        CONSTRUCTOR Hospital()
+            departmentMap = EMPTY MAP
+        END CONSTRUCTOR
+
+        METHOD addDoctor(department : STRING, doctor : Doctor)
+            IF department NOT IN departmentMap
+                departmentMap[department] = NEW LIST<Doctor>()
+            END IF
+            departmentMap[department].add(doctor)
+        END METHOD
+
+        METHOD filterBySpecialization(specialization : STRING)
+            PRINT "Doctors specialized in " + specialization + ":"
+            FOR EACH department, doctorList IN departmentMap
+                FOR EACH doc IN doctorList
+                    IF doc.getSpecialization() == specialization
+                        PRINT doc.getDetails() + " [Department: " + department + "]"
+                    END IF
+                END FOR
+            END FOR
+        END METHOD
+END CLASS
+
+FUNCTION mainHospital()
+    hospital = NEW Hospital()
+
+    d1 = NEW Doctor("Sharma", "Cardiology")
+    d2 = NEW Doctor("Verma", "Neurology")
+    d3 = NEW Doctor("Iyer", "Cardiology")
+
+    hospital.addDoctor("Heart Dept", d1)
+    hospital.addDoctor("Brain Dept", d2)
+    hospital.addDoctor("Heart Dept", d3)
+
+    hospital.filterBySpecialization("Cardiology")
+END FUNCTION

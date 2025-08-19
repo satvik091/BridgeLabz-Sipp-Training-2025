@@ -1,0 +1,44 @@
+CLASS Book
+    PRIVATE:
+        title : STRING
+        year : INTEGER
+        rating : DOUBLE
+    PUBLIC:
+        CONSTRUCTOR Book(title : STRING, year : INTEGER, rating : DOUBLE)
+            this.title = title
+            this.year = year
+            this.rating = rating
+        END CONSTRUCTOR
+
+        METHOD getYear() : INTEGER
+            RETURN year
+        END METHOD
+
+        METHOD getRating() : DOUBLE
+            RETURN rating
+        END METHOD
+
+        METHOD getTitle() : STRING
+            RETURN title
+        END METHOD
+END CLASS
+
+
+FUNCTION mainLibrary()
+    books = LIST<Book>()
+    books.add( NEW Book("AI Revolution", 2016, 4.7) )
+    books.add( NEW Book("Old Classics", 2010, 4.8) )
+    books.add( NEW Book("Modern Java", 2019, 4.6) )
+    books.add( NEW Book("Basic Programming", 2022, 4.2) )
+
+    PRINT "Books published after 2015 with rating > 4.5:"
+    
+    // Stream + Lambda Filtering
+    filteredBooks = books.stream()
+                         .filter( book -> book.getYear() > 2015 AND book.getRating() > 4.5 )
+                         .collectToList()
+
+    FOR EACH book IN filteredBooks
+        PRINT book.getTitle() + " (" + book.getYear() + ") Rating: " + book.getRating()
+    END FOR
+END FUNCTION

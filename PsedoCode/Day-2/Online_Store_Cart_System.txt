@@ -1,0 +1,58 @@
+CLASS Item
+    PRIVATE:
+        name : STRING
+        price : DOUBLE
+    PUBLIC:
+        CONSTRUCTOR Item(name : STRING, price : DOUBLE)
+            this.name = name
+            this.price = price
+        END CONSTRUCTOR
+
+        METHOD getPrice() : DOUBLE
+            RETURN price
+        END METHOD
+
+        METHOD getName() : STRING
+            RETURN name
+        END METHOD
+END CLASS
+
+CLASS ShoppingCart
+    PRIVATE:
+        items : LIST<Item>
+
+    PUBLIC:
+        CONSTRUCTOR ShoppingCart()
+            items = EMPTY LIST
+        END CONSTRUCTOR
+
+        METHOD addItem(item : Item)
+            items.add(item)
+        END METHOD
+
+        GENERIC METHOD calculateTotalPrice<T extends Item>() : DOUBLE
+            total = 0
+            FOR EACH item IN items
+                total = total + item.getPrice()
+            END FOR
+            RETURN total
+        END METHOD
+
+        METHOD displayCart()
+            PRINT "Shopping Cart:"
+            FOR EACH item IN items
+                PRINT item.getName() + " -> " + item.getPrice()
+            END FOR
+            PRINT "Total: " + calculateTotalPrice()
+        END METHOD
+END CLASS
+
+FUNCTION mainStoreCart()
+    cart = NEW ShoppingCart()
+
+    cart.addItem( NEW Item("Laptop", 50000) )
+    cart.addItem( NEW Item("Mouse", 1500) )
+    cart.addItem( NEW Item("Headphones", 2000) )
+
+    cart.displayCart()
+END FUNCTION
