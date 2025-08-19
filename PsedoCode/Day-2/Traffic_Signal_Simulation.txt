@@ -1,0 +1,52 @@
+ENUM TrafficLight
+    RED
+    YELLOW
+    GREEN
+END ENUM
+
+CLASS TrafficSignal
+    PRIVATE:
+        currentLight : TrafficLight
+        timer : INTEGER
+
+    PUBLIC:
+        CONSTRUCTOR TrafficSignal()
+            currentLight = RED
+            timer = 0
+        END CONSTRUCTOR
+
+        METHOD switchLight()
+            IF currentLight == RED THEN
+                currentLight = GREEN
+            ELSE IF currentLight == GREEN THEN
+                currentLight = YELLOW
+            ELSE IF currentLight == YELLOW THEN
+                currentLight = RED
+            END IF
+        END METHOD
+
+        METHOD runSimulation(totalTime : INTEGER)
+            FOR second FROM 1 TO totalTime
+                timer = timer + 1
+
+                // Rule: RED=5s, GREEN=5s, YELLOW=2s
+                IF currentLight == RED AND timer == 5 THEN
+                    switchLight()
+                    timer = 0
+                ELSE IF currentLight == GREEN AND timer == 5 THEN
+                    switchLight()
+                    timer = 0
+                ELSE IF currentLight == YELLOW AND timer == 2 THEN
+                    switchLight()
+                    timer = 0
+                END IF
+
+                PRINT "Time=" + toString(second) + "s → Light: " + toString(currentLight)
+            END FOR
+        END METHOD
+END CLASS
+
+FUNCTION mainTraffic()
+    signal = NEW TrafficSignal()
+    signal.runSimulation(20)
+END FUNCTION

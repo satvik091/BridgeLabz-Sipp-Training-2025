@@ -1,0 +1,57 @@
+ABSTRACT CLASS Crop
+    PROTECTED:
+        name : STRING
+
+    PUBLIC:
+        CONSTRUCTOR Crop(name : STRING)
+            THIS.name = name
+        END CONSTRUCTOR
+
+        METHOD getName() : STRING
+            RETURN name
+        END METHOD
+
+        ABSTRACT METHOD waterRequirement() : INTEGER
+        ABSTRACT METHOD harvestTime() : STRING
+END CLASS
+
+CLASS Rice EXTENDS Crop
+    PUBLIC:
+        CONSTRUCTOR Rice()
+            SUPER("Rice")
+        END CONSTRUCTOR
+
+        OVERRIDE METHOD waterRequirement() : INTEGER
+            RETURN 1200
+        END METHOD
+
+        OVERRIDE METHOD harvestTime() : STRING
+            RETURN "Rice takes ~120 days to harvest."
+        END METHOD
+END CLASS
+
+CLASS Wheat EXTENDS Crop
+    PUBLIC:
+        CONSTRUCTOR Wheat()
+            SUPER("Wheat")
+        END CONSTRUCTOR
+
+        OVERRIDE METHOD waterRequirement() : INTEGER
+            RETURN 800
+        END METHOD
+
+        OVERRIDE METHOD harvestTime() : STRING
+            RETURN "Wheat takes ~90 days to harvest."
+        END METHOD
+END CLASS
+
+FUNCTION mainFarming()
+    crops : LIST<Crop> = [ NEW Rice(), NEW Wheat() ]
+
+    FOR EACH crop IN crops
+        PRINT "Crop: " + crop.getName()
+        PRINT "Water Requirement: " + toString(crop.waterRequirement()) + " liters/acre"
+        PRINT "Harvest Info: " + crop.harvestTime()
+        PRINT "----"
+    END FOR
+END FUNCTION
