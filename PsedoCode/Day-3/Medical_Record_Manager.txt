@@ -1,0 +1,84 @@
+INTERFACE Searchable
+    METHOD search(keyword : STRING) : BOOLEAN
+END INTERFACE
+
+INTERFACE Printable
+    METHOD printReport()
+END INTERFACE
+
+CLASS LabReport IMPLEMENTS Searchable, Printable
+    PRIVATE:
+        testName : STRING
+        result : STRING
+
+    PUBLIC:
+        CONSTRUCTOR LabReport(testName : STRING, result : STRING)
+            THIS.testName = testName
+            THIS.result = result
+        END CONSTRUCTOR
+
+        METHOD search(keyword : STRING) : BOOLEAN
+            RETURN (keyword IN testName OR keyword IN result)
+        END METHOD
+
+        METHOD printReport()
+            PRINT "Lab Report: " + testName + " → " + result
+        END METHOD
+END CLASS
+
+CLASS Prescription IMPLEMENTS Searchable, Printable
+    PRIVATE:
+        doctorName : STRING
+        medicines : LIST<STRING>
+
+    PUBLIC:
+        CONSTRUCTOR Prescription(doctorName : STRING, medicines : LIST<STRING>)
+            THIS.doctorName = doctorName
+            THIS.medicines = medicines
+        END CONSTRUCTOR
+
+        METHOD search(keyword : STRING) : BOOLEAN
+            RETURN (keyword IN doctorName OR keyword IN medicines)
+        END METHOD
+
+        METHOD printReport()
+            PRINT "Prescription by " + doctorName + ": " + toString(medicines)
+        END METHOD
+END CLASS
+
+CLASS MedicalRecordManager
+    PRIVATE:
+        records : LIST<Searchable + Printable>
+
+    PUBLIC:
+        CONSTRUCTOR MedicalRecordManager()
+            records = EMPTY LIST
+        END CONSTRUCTOR
+
+        METHOD addRecord(record : Searchable + Printable)
+            ADD record TO records
+        END METHOD
+
+        METHOD searchRecords(keyword : STRING)
+            PRINT "Searching for: " + keyword
+            FOR EACH record IN records
+                IF record.search(keyword) THEN
+                    record.printReport()
+                END IF
+            END FOR
+        END METHOD
+END CLASS
+
+FUNCTION mainMedicalRecords()
+    report1 = NEW LabReport("Blood Test", "Normal")
+    report2 = NEW LabReport("X-Ray", "Fracture in arm")
+    presc1 = NEW Prescription("Dr. Sharma", ["Paracetamol", "Vitamin C"])
+
+    manager = NEW MedicalRecordManager()
+    manager.addRecord(report1)
+    manager.addRecord(report2)
+    manager.addRecord(presc1)
+
+    manager.searchRecords("Fracture")
+    manager.searchRecords("Paracetamol")
+END FUNCTION

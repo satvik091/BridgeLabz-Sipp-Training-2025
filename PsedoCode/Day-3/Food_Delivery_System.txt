@@ -1,0 +1,79 @@
+
+
+CLASS Customer
+    PRIVATE:
+        name : STRING
+        address : STRING
+    PUBLIC:
+        CONSTRUCTOR Customer(name : STRING, address : STRING)
+            THIS.name = name
+            THIS.address = address
+        END CONSTRUCTOR
+
+        METHOD getDetails() : STRING
+            RETURN "Customer: " + name + ", Address: " + address
+        END METHOD
+END CLASS
+
+CLASS Restaurant
+    PRIVATE:
+        name : STRING
+        location : STRING
+    PUBLIC:
+        CONSTRUCTOR Restaurant(name : STRING, location : STRING)
+            THIS.name = name
+            THIS.location = location
+        END CONSTRUCTOR
+
+        METHOD getDetails() : STRING
+            RETURN "Restaurant: " + name + ", Location: " + location
+        END METHOD
+END CLASS
+
+CLASS DeliveryBoy
+    PRIVATE:
+        name : STRING
+        phone : STRING
+    PUBLIC:
+        CONSTRUCTOR DeliveryBoy(name : STRING, phone : STRING)
+            THIS.name = name
+            THIS.phone = phone
+        END CONSTRUCTOR
+
+        METHOD getDetails() : STRING
+            RETURN "Delivery Boy: " + name + ", Phone: " + phone
+        END METHOD
+END CLASS
+
+CLASS Order
+    PRIVATE:
+        customer : Customer
+        restaurant : Restaurant
+        deliveryBoy : DeliveryBoy
+        items : LIST<STRING>
+
+    PUBLIC:
+        CONSTRUCTOR Order(customer : Customer, restaurant : Restaurant, deliveryBoy : DeliveryBoy, items : LIST<STRING>)
+            THIS.customer = customer
+            THIS.restaurant = restaurant
+            THIS.deliveryBoy = deliveryBoy
+            THIS.items = items
+        END CONSTRUCTOR
+
+        METHOD getOrderDetails()
+            PRINT customer.getDetails()
+            PRINT restaurant.getDetails()
+            PRINT deliveryBoy.getDetails()
+            PRINT "Items: " + toString(items)
+        END METHOD
+END CLASS
+
+FUNCTION mainFoodDelivery()
+    c = NEW Customer("Satvik", "Delhi, India")
+    r = NEW Restaurant("Foodie's Hub", "Connaught Place")
+    d = NEW DeliveryBoy("Ravi", "9876543210")
+    items = ["Pizza", "Coke"]
+
+    order = NEW Order(c, r, d, items)
+    order.getOrderDetails()
+END FUNCTION
